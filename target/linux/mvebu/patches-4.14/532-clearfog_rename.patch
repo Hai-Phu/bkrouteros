@@ -1,0 +1,11 @@
+--- a/arch/arm/boot/dts/armada-388-clearfog-pro.dts
++++ b/arch/arm/boot/dts/armada-388-clearfog-pro.dts
+@@ -48,7 +48,7 @@
+ #include "armada-388-clearfog.dts"
+ 
+ / {
+-	model = "SolidRun Clearfog Pro A1";
++	model = "BKRouter Clf";
+ 	compatible = "solidrun,clearfog-pro-a1",
+ 		"solidrun,clearfog-a1", "marvell,armada388",
+ 		"marvell,armada385", "marvell,armada380";

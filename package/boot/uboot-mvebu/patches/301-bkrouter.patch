@@ -1,0 +1,55 @@
+--- a/arch/arm/dts/Makefile
++++ b/arch/arm/dts/Makefile
+@@ -92,6 +92,8 @@ dtb-$(CONFIG_ARCH_MVEBU) +=			\
+ 	armada-375-db.dtb			\
+ 	armada-388-clearfog.dtb			\
+ 	armada-388-gp.dtb			\
++	armada-388-bkrouter.dtb			\
++	armada-388-bkrouter-v2.dtb			\
+ 	armada-385-amc.dtb			\
+ 	armada-7040-db.dtb			\
+ 	armada-7040-db-nand.dtb			\
+--- a/arch/arm/mach-mvebu/Kconfig
++++ b/arch/arm/mach-mvebu/Kconfig
+@@ -75,6 +75,14 @@ config TARGET_CLEARFOG
+ 	bool "Support ClearFog"
+ 	select 88F6820
+ 
++config TARGET_BKROUTER
++	bool "Support BKRouter"
++	select 88F6820
++
++config TARGET_BKROUTER_V2
++	bool "Support BKRouter V2"
++	select 88F6820
++
+ config TARGET_MVEBU_ARMADA_37XX
+ 	bool "Support Armada 37xx platforms"
+ 	select ARMADA_3700
+@@ -138,6 +142,8 @@ config SYS_BOARD
+ 	default "ds414" if TARGET_DS414
+ 	default "maxbcm" if TARGET_MAXBCM
+ 	default "theadorable" if TARGET_THEADORABLE
++	default "bkrouter" if TARGET_BKROUTER
++	default "bkrouter-v2" if TARGET_BKROUTER_V2
+ 
+ config SYS_CONFIG_NAME
+ 	default "clearfog" if TARGET_CLEARFOG
+@@ -151,6 +156,8 @@ config SYS_CONFIG_NAME
+ 	default "maxbcm" if TARGET_MAXBCM
+ 	default "theadorable" if TARGET_THEADORABLE
+ 	default "turris_omnia" if TARGET_TURRIS_OMNIA
++	default "bkrouter" if TARGET_BKROUTER
++	default "bkrouter-v2" if TARGET_BKROUTER_V2
+ 
+ config SYS_VENDOR
+ 	default "Marvell" if TARGET_DB_MV784MP_GP
+@@ -162,6 +168,8 @@ config SYS_VENDOR
+ 	default "solidrun" if TARGET_CLEARFOG
+ 	default "Synology" if TARGET_DS414
+ 	default "CZ.NIC" if TARGET_TURRIS_OMNIA
++	default "hcmut" if TARGET_BKROUTER
++	default "hcmut" if TARGET_BKROUTER_V2
+ 
+ config SYS_SOC
+ 	default "mvebu"

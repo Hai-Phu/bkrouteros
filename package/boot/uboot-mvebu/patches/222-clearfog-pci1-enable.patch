@@ -1,0 +1,24 @@
+--- a/arch/arm/dts/armada-388-clearfog.dts
++++ b/arch/arm/dts/armada-388-clearfog.dts
+@@ -361,6 +361,10 @@
+ 			 * The two PCIe units are accessible through
+ 			 * the mini-PCIe connectors on the board.
+ 			 */
++                        pcie@1,0 {
++                                /* Port 0, Lane 0. */
++                                status = "okay";
++                        };
+ 			pcie@2,0 {
+ 				/* Port 1, Lane 0. CONN3, nearest power. */
+ 				reset-gpios = <&expander0 1 GPIO_ACTIVE_LOW>;
+--- a/board/solidrun/clearfog/clearfog.c
++++ b/board/solidrun/clearfog/clearfog.c
+@@ -50,7 +50,7 @@ static struct marvell_io_exp io_exp[] =
+ };
+ 
+ static struct serdes_map board_serdes_map[] = {
+-	{SATA0, SERDES_SPEED_3_GBPS, SERDES_DEFAULT_MODE, 0, 0},
++	{PEX0, SERDES_SPEED_5_GBPS, PEX_ROOT_COMPLEX_X1, 0, 0},
+ 	{SGMII1, SERDES_SPEED_1_25_GBPS, SERDES_DEFAULT_MODE, 0, 0},
+ 	{PEX1, SERDES_SPEED_5_GBPS, PEX_ROOT_COMPLEX_X1, 0, 0},
+ 	{USB3_HOST1, SERDES_SPEED_5_GBPS, SERDES_DEFAULT_MODE, 0, 0},

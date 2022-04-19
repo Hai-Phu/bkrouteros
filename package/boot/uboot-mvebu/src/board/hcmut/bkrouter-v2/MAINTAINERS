@@ -1,0 +1,6 @@
+BKROUTER BOARD
+M:	HaiPhu <nguyenphanhaiphu@gmail.com>
+S:	Maintained
+F:	board/hcmut/bkrouter-v2/
+F:	include/configs/bkrouter-v2.h
+F:	configs/bkrouterv2_defconfig

@@ -1,0 +1,13 @@
+--- a/arch/arm/boot/dts/armada-388-clearfog.dtsi
++++ b/arch/arm/boot/dts/armada-388-clearfog.dtsi
+@@ -110,6 +110,10 @@
+ 			 * The two PCIe units are accessible through
+ 			 * the mini-PCIe connectors on the board.
+ 			 */
++                        pcie@1,0 {
++                                /* Port 0, Lane 0. */
++                                status = "okay";
++                        };
+ 			pcie@2,0 {
+ 				/* Port 1, Lane 0. CON3, nearest power. */
+ 				reset-gpios = <&expander0 1 GPIO_ACTIVE_LOW>;

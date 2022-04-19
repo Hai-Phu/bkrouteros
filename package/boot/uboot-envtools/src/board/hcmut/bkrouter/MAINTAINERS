@@ -1,0 +1,6 @@
+BKROUTER BOARD
+M:	Stefan Roese <sr@denx.de>
+S:	Maintained
+F:	board/hcmut/bkrouter/
+F:	include/configs/bkrouter.h
+F:	configs/bkrouter_defconfig
